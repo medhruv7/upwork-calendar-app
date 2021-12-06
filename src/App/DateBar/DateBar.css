@@ -1,0 +1,4 @@
+.date-bar-main{
+    display: flex;
+    flex-direction: row;
+}
