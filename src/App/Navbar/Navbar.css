@@ -1,0 +1,8 @@
+.nav-main{
+    background-color: rgb(65, 173, 65);
+    overflow: hidden;
+}
+
+.nav-left{
+    float: left;
+}
