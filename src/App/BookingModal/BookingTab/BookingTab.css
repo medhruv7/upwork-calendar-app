@@ -1,0 +1,11 @@
+.booking-tab-main-div{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    padding: 10px 10px;
+    /* border: solid; */
+}
+
+.booking-price-section{
+    margin-left: 200px;
+}

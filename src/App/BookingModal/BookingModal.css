@@ -1,0 +1,21 @@
+.booking-modal-main-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-modal-top{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 10px;
+}
+
+.booking-modal-heading{
+    flex: 50%;
+}
+
+.booking-modal-close{
+    flex: 50%;
+    text-align: right;
+}
+
+

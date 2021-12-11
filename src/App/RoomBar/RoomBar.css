@@ -1,0 +1,57 @@
+.main-room-div{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.calendar-table-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.room-display-div{
+    text-align: center;
+}
+
+.room-block{
+    min-height: 3.5em;
+    min-width: 10em;
+    border: solid;
+}
+.day-display-div{
+    /* border: solid; */
+    display: flex;
+    flex-direction: column;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.day-display-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.day-display-item{
+    min-width: 8em;
+    border: solid;
+    display: flex;
+    flex-direction: column;
+    min-height: 3.5em;
+    max-height: 3.5em;
+}
+
+.book-room-block{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.room-book-day-block{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.room-number-display-block{
+    margin-top: 20px;
+}

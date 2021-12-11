@@ -1,0 +1,37 @@
+.guest-main-div{
+    border-top: 1px solid;
+}
+
+.guest-header{
+    margin-top: 10px;
+}
+
+.guest-adult-wrapper{
+    margin-top: 10px;
+}
+
+.guest-adult-selector{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.guest-adult-display{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.guest-child-wrapper{
+    margin-top: 10px;
+}
+
+.guest-child-selector{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.guest-child-display{
+    margin-left: 10px;
+    margin-right: 10px;
+}

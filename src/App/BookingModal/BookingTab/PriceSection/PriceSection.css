@@ -1,0 +1,25 @@
+.price-section-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.price-header{
+    font-weight: bold;
+    padding: 10px 10px;
+}
+
+.final-price-wrapper{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 10px;
+}
+
+.down-payment-wrapper{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 10px;
+}
+
+.price-input{
+    margin-left: 10px;
+}

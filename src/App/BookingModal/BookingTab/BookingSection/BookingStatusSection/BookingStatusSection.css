@@ -1,0 +1,16 @@
+.booking-status-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-status-header{
+    margin-top: 10px;
+}
+
+.booking-status-item{
+    margin-top: 10px;
+}
+
+.booking-status-div{
+    border-top: 1px solid;
+}

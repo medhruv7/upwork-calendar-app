@@ -1,0 +1,30 @@
+.date-selection{
+    display: flex;
+    flex-direction: column;
+}
+
+.to-from-selection{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 10px;
+}
+
+.num-of-night-selection{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 10px;
+}
+
+.from-item{
+    margin-right: 10px;
+}
+
+.to-item{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.num-nights-item{
+    margin-left: 10px;
+    margin-right: 10px;
+}

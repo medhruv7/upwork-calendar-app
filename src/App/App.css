@@ -1,3 +1,23 @@
 body{
     background-color: grey;
 }
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.main-app{
+    display: flex;
+    flex-direction: column;
+}
+
+.date-bar{
+    border: solid;
+    margin: 10px 10px;
+}
+
+.bottom-bar{
+    /* border: solid; */
+    margin: 10px 10px;
+}

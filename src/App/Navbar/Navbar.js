@@ -1,10 +1,10 @@
 import "./Navbar.css"
-
+import { AiOutlineMenu } from 'react-icons/ai'
 const Navbar = props => {
     return (
         <div className="nav-main">
             <div className="nav-left">
-                Caret
+                <AiOutlineMenu />
             </div>
 
         </div>
