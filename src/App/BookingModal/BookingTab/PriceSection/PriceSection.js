@@ -1,3 +1,4 @@
+import { TextField } from '@mui/material';
 import './PriceSection.css'
 
 export const PriceSection = props => {
@@ -6,23 +7,9 @@ export const PriceSection = props => {
             <div className="price-header">
                 Price
             </div>
-            <div>
-                <div className="final-price-wrapper">
-                    <div>
-                        Final Price: 
-                    </div>
-                    <div className="price-input">
-                        <input type="number"/>
-                    </div>
-                </div>
-                <div className="down-payment-wrapper">
-                    <div>
-                        Down Payment: 
-                    </div>
-                    <div className="price-input">
-                        <input type="number"/>
-                    </div>
-                </div>
+            <div style={{display: 'flex', flexDirection: 'column'}}>
+                <TextField label="Final Price" type="number" size='small' style={{marginTop: '20px'}}/>
+                <TextField label="Down Payment" type="number" size='small' style={{marginTop: '20px'}}/>
             </div>
         </div>
     )

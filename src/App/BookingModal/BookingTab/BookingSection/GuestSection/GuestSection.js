@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { setGuestAdult, setGuestChild } from "../../../../Features/BookingDeatails/bookingDeatilsSlice";
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import './GuestSection.css'
+import { Button, TextField } from "@mui/material";
 
 const Guestsection = props => {
     const childGuest = useSelector(state => state.bookingDetails.childGuest);
@@ -25,26 +26,21 @@ const Guestsection = props => {
     }
     return (
         <div className="guest-main-div">
-            <div className="guest-header">
+            <div className="guest-header" style={{fontSize: '15px'}}>
                 Number Of Guests
             </div>
             <div className="guest-adult-wrapper">
-                <div>
-                    Adults
-                </div>
                 <div className="guest-adult-selector">
-                    <a onClick={handleMinusAdultGuest}>
+                    <Button variant="text" size="small" onClick={handleMinusAdultGuest}>
                         <AiOutlineMinus />
-                    </a>
-                    <div className="guest-adult-display">
-                        {adultGuest}
-                    </div>
-                    <a onClick={handlePlusAdultGuest}>
+                    </Button>
+                    <TextField size="small" label="Adults" value={adultGuest} />
+                    <Button onClick={handlePlusAdultGuest} variant="text" size="small">
                         <AiOutlinePlus />
-                    </a>
+                    </Button>
                 </div>
             </div>
-            <div className="guest-child-wrapper">
+            {/* <div className="guest-child-wrapper">
                 <div>
                     Children
                 </div>
@@ -59,7 +55,7 @@ const Guestsection = props => {
                         <AiOutlinePlus />
                     </a>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -8,6 +8,9 @@ export const renderSlice = createSlice({
         showBookingCalendar: false,
         showToBookingCalendar: false,
         showYearCalendar: false,
+        isClientTabOpen: false,
+        bookingModalSelected: 'bookingDetails',
+        addRoomModalOpen: false,
     },
     reducers: {
         'openBookingModal': (state, action) => {
@@ -40,10 +43,28 @@ export const renderSlice = createSlice({
         'closeYearCalendar': (state, action) => {
             state.showYearCalendar = false;
         },
+        'openClientTab': (state, action) => {
+            state.isClientTabOpen = true;
+        },
+        'closeClientTab': (state, action) => {
+            state.isClientTabOpen = false;
+        },
+        'setBookingModalSelected': (state, action) => {
+            state.bookingModalSelected = action.payload;
+        },
+        'openAddRoomModal': (state, action) => {
+            state.addRoomModalOpen = true;
+        },
+        'closeAddRoomModal': (state, action) => {
+            state.addRoomModalOpen = false;
+        }
     }
 })
 
 export const { openBookingModal, closeBookingModal, openBookingTab, 
     closeBookingTab, openBookingCalendar, closeBookingCalendar,
-    openToBookingCalendar, closeToBookingCalendar, openYearCalendar, closeYearCalendar } = renderSlice.actions;
+    openToBookingCalendar, closeToBookingCalendar, openYearCalendar, closeYearCalendar,
+    openClientTab, closeClientTab, setBookingModalSelected, openAddRoomModal,
+    closeAddRoomModal
+} = renderSlice.actions;
 export default renderSlice.reducer;

@@ -5,9 +5,6 @@ import Guestsection from "./GuestSection/GuestSection";
 import './BookingSection.css'
 const BookingSection = props => {
     return (<div>
-        <div className="booking-details-header">
-            Booking Details
-        </div>
         <div className="calendar-section">
             <CalendarSection />
         </div>

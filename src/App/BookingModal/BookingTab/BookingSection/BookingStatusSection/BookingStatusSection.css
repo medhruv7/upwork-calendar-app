@@ -14,3 +14,7 @@
 .booking-status-div{
     border-top: 1px solid;
 }
+
+#booking-status-content a:hover{
+    background-color: #ccd6df;
+}

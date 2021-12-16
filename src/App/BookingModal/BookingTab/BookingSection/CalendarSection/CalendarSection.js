@@ -5,6 +5,8 @@ import { closeBookingCalendar, closeToBookingCalendar, openBookingCalendar, open
 import { setFromBookingDate, setToBookingDate } from '../../../../Features/BookingDeatails/bookingDeatilsSlice';
 import moment from 'moment';
 import { AiOutlineCalendar, AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
+import { Button, TextField } from '@mui/material';
+import ReactDatePicker from 'react-datepicker';
 const CalendarSection = props => {
     const dispatch = useDispatch();
     
@@ -15,7 +17,6 @@ const CalendarSection = props => {
     const handleOnClickFromCalendar = (value) => {
         dispatch(closeBookingCalendar());
         dispatch(setFromBookingDate(value));
-        dispatch(setToBookingDate(value));
     }
     const handleOnClickToCalendar = (value) => {
         if(value >= fromBookingDate){
@@ -44,34 +45,52 @@ const CalendarSection = props => {
         dispatch(setToBookingDate(newBookingToDate));
     }
 
+    const handleOnChangeDateRange = dates => {
+        const [start, end] = dates;
+        dispatch(setFromBookingDate(start));
+        dispatch(setToBookingDate(end));
+        if(end !== null){
+            dispatch(closeToBookingCalendar());
+        }
+    }
     return (
         <div>
             <div className="date-selection">
                 <div className="to-from-selection">
                     <div className="from-item">
-                        From : {fromBookingDate?moment(fromBookingDate).format('DD-MM-YYYY'):null}
+                        <div>
+                        <TextField onClick={() => dispatch(openToBookingCalendar())} label="From" value={moment(fromBookingDate).format('DD-MM-YYYY')}/>
+                        {toBookingDate && <TextField style={{marginLeft: '10px'}} label="To" value={moment(toBookingDate).format('DD-MM-YYYY')}/>}
+                        {showToBookingCalendar && 
+                            <ReactDatePicker 
+                                selected={fromBookingDate}
+                                selectsRange
+                                inline
+                                startDate={fromBookingDate}
+                                endDate={toBookingDate}
+                                onChange={handleOnChangeDateRange}
+                                shouldCloseOnSelect={true}
+                            />
+                        }
+                        </div>
+                        {/* <TextField onClick={() => dispatch(openBookingCalendar())} label="From" size='small' value={fromBookingDate?moment(fromBookingDate).format('DD-MM-YYYY'):null} /> */}
                     </div>
-                    <a onClick={() => dispatch(openBookingCalendar())}> <AiOutlineCalendar /> 
-                    </a>
-                    {showBookingCalendar && <div> <Calendar onClickDay={(val, e) => handleOnClickFromCalendar(val)}/> </div>}
-                    <div className="to-item">
-                        To : {toBookingDate?moment(toBookingDate).format('DD-MM-YYYY'):null}
-                    </div>
-                    <a onClick={() => dispatch(openToBookingCalendar())}> <AiOutlineCalendar /> 
-                    </a>
-                    {showToBookingCalendar && <div> <Calendar onClickDay={(value, e) => handleOnClickToCalendar(value)}/> </div>}
+                    {/* <div className="to-item">
+                        <TextField onClick={() => dispatch(openToBookingCalendar())} size='small' label="From" value={toBookingDate?moment(toBookingDate).format('DD-MM-YYYY'):null} />
+                    </div> */}
+                    {/* {showToBookingCalendar && <div> <Calendar onClickDay={(value, e) => handleOnClickToCalendar(value)}/> </div>} */}
                 </div>
-                <div className="num-of-night-selection">
-                    <a onClick={() => handleOnClickDecreaseNight()} className="num-nights-minus">
+                {!showToBookingCalendar && <div className="num-of-night-selection">
+                    <Button variant='text' size='small' onClick={() => handleOnClickDecreaseNight()} className="num-nights-minus">
                         <AiOutlineMinus />
-                    </a>
+                    </Button>
                     <div className="num-nights-item">
-                        Number Of Nights : {getNumberOfNights()}
+                        <TextField label="Number Of Nights" size='small' value={getNumberOfNights()} />
                     </div>
-                    <a onClick={handleOnClickIncreaseNight}>
+                    <Button variant='text' size='small' onClick={handleOnClickIncreaseNight}>
                         <AiOutlinePlus />
-                    </a>
-                </div>
+                    </Button>
+                </div>}
             </div>
         </div>
     )

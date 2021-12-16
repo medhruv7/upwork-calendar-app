@@ -4,8 +4,9 @@
 }
 
 .price-header{
-    font-weight: bold;
+    /* font-weight: bold; */
     padding: 10px 10px;
+    font-size: 15px;
 }
 
 .final-price-wrapper{

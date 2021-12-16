@@ -13,9 +13,33 @@
     flex: 50%;
 }
 
-.booking-modal-close{
+.booking-modal-right{
     flex: 50%;
     text-align: right;
+    /* display: flex; */
+    /* flex-direction: row; */
 }
 
+.modal-save{
+    margin-right: 100px;
+}
 
+.booking-modal-tab-select{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.booking-modal-heading{
+    font-weight: bold;
+}
+
+.booking-modal-content{
+    margin-top: 30px;
+    border-top: solid;
+}
+
+.react-datepicker-popper {
+    z-index: 9999 !important;
+}

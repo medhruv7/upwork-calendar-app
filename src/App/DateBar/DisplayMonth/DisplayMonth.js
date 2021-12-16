@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { setDate, setMonth } from "../../Features/Date/dateSlice";
@@ -16,9 +17,9 @@ const DisplayMonth = props => {
         <div className="display-month-container">
             {
                 moment.months().map((month,index) => (
-                    <a key={index} className="display-month-item" onClick={() => handleOnClickMonth(index)}>
+                    <Button size='small' variant="contained" style={{marginLeft: '10px'}} key={index} className="display-month-item" onClick={() => handleOnClickMonth(index)}>
                         {month}
-                    </a>
+                    </Button>
                 ))
             }
         </div>
